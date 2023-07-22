@@ -1,4 +1,7 @@
 
+using Korean_Api.Database;
+using Microsoft.EntityFrameworkCore;
+
 namespace Korean_Api
 {
     public class Program
@@ -13,7 +16,10 @@ namespace Korean_Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            //connecting to the database
+            //databse connection
+            string? con = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<KoreanContext>(builder => { builder.UseSqlServer(con).EnableSensitiveDataLogging(); });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
