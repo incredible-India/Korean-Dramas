@@ -1,0 +1,33 @@
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\appsettings.json
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Korean Api.exe
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Korean Api.deps.json
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Korean Api.runtimeconfig.json
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Korean Api.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Korean Api.pdb
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.csproj.AssemblyReference.cache
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.AssemblyInfoInputs.cache
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.AssemblyInfo.cs
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.csproj.CoreCompileInputs.cache
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\staticwebassets\msbuild.Korean Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\staticwebassets\msbuild.build.Korean Api.props
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Korean Api.props
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Korean Api.props
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\scopedcss\bundle\Korean Api.styles.css
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.csproj.CopyComplete
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\refint\Korean Api.dll
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.pdb
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\Korean Api.genruntimeconfig.cache
+C:\Users\namya.hs\Desktop\API\Korean-Dramas\Korean API\Korean Api\obj\Debug\net7.0\ref\Korean Api.dll
