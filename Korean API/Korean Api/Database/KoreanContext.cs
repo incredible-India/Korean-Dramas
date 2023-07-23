@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Korean_Api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Korean_Api.Database
 {
@@ -8,6 +9,7 @@ namespace Korean_Api.Database
         {
 
         }
+        public DbSet<LeadActors> LeadActors { get; set; }
 
     }
 }

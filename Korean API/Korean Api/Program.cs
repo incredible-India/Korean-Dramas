@@ -1,5 +1,7 @@
 
 using Korean_Api.Database;
+using Korean_Api.Implemantaion;
+using Korean_Api.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace Korean_Api
@@ -11,6 +13,7 @@ namespace Korean_Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<IActor,ActorImplementation>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
