@@ -28,7 +28,35 @@ namespace Korean_Api.Controllers
             return Ok(status);
         }
 
+
+        //user login
+        [HttpPost("login")]
+
+        public IActionResult UserLogin([FromForm] string Email, [FromForm] string Password)
+        {
+            var isLogin = _user.Login(Email, Password);
+
+            if(isLogin == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(isLogin);
+            }
+            
+        }
+
+        //add fav actors/actress
+        [HttpPost("Addfav")]
+        public IActionResult Addfav() {
+            return Ok();
+         }
+
         #endregion
+
+
+
 
 
     }

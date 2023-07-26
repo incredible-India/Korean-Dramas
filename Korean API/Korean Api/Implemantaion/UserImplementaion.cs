@@ -11,6 +11,32 @@ namespace Korean_Api.Implemantaion
         {
             _dbContext = koreanContext;
         }
+
+        public dynamic Login(string email, string password)
+        {
+            //checking the email
+            Users? users = _dbContext.users.Where(m => m.Email == email).FirstOrDefault();
+
+            if (users != null)
+            {
+                //if email exist then check for the password
+                if(users.Password == password)
+                {
+                    //if password is correct send the user information
+                    return users;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public Dictionary<string,string> NewUserRegistration(Users user)
         {
 
@@ -37,6 +63,8 @@ namespace Korean_Api.Implemantaion
 
                 return status;
             }
+
+
 
             
         }
