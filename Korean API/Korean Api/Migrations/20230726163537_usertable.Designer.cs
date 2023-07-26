@@ -3,6 +3,7 @@ using Korean_Api.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Korean_Api.Migrations
 {
     [DbContext(typeof(KoreanContext))]
-    partial class KoreanContextModelSnapshot : ModelSnapshot
+    [Migration("20230726163537_usertable")]
+    partial class usertable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,32 +67,7 @@ namespace Korean_Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ActorsTable");
-                });
-
-            modelBuilder.Entity("Korean_Api.Models.Users", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("users");
+                    b.ToTable("LeadActors");
                 });
 
             modelBuilder.Entity("Korean_Api.Models.Users", b =>
