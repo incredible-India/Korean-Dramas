@@ -12,9 +12,17 @@ namespace Korean_Api.Implemantaion
         {
             _koreanContext = koreanContext;
         }
+
+        public LeadActors GetActorById(int id)
+        {
+           
+            LeadActors? a = _koreanContext.ActorsTable.Where(x=>x.Id == id).FirstOrDefault();
+            return a;
+        }
+
         public LeadActors NewActor(LeadActors lActor)
         {
-            _koreanContext.LeadActors.Add(lActor);
+            _koreanContext.ActorsTable.Add(lActor);
             _koreanContext.SaveChanges();
             return lActor;
         }

@@ -9,7 +9,7 @@ namespace Korean_Api.Database
         {
 
         }
-        public DbSet<LeadActors> LeadActors { get; set; }
+        public DbSet<LeadActors> ActorsTable { get; set; }
 
         public DbSet<Users> users { get; set; }
 
