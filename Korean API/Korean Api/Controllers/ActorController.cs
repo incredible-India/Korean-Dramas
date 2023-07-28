@@ -25,6 +25,13 @@ namespace Korean_Api.Controllers
             return Ok(lead);
         }
 
+        //To add movies for actor
+        [HttpPost("AddMovies")]
+        public IActionResult AddMovies([FromBody] TempMovies temp )
+        {
+            return Ok(temp);
+        }
+
 
         #endregion
 
@@ -34,12 +41,39 @@ namespace Korean_Api.Controllers
         public IActionResult GetActor([FromRoute] int actorId)
         {
             var ac = _actor.GetActorById(actorId);
-            if(ac==null)
+            if (ac == null)
             {
                 return Content("Actor entered not found..");
+
             }
             return Ok(ac);
+        }
+        //Get details of all actors
+        [HttpGet("GetAllActors")]
+        public IActionResult GetAllActorsList()
+        {
+            var l = _actor.GetAllActors();
+            if (l.Count !=0)
+            {
+                return Ok(l);
+            }
+            return Content("No actors found...");
+        }
+        #endregion
+
+        #region Delete
+        //Delete actor details by id
+        [HttpDelete("DeleteActor/{actorId:int}")]
+        public IActionResult DeleteActor([FromRoute] int actorId)
+        {
+            var del = _actor.DeleteActorById(actorId);
+            if (del == 1)
+            {
+                return Content("Actor deleted successfully..");
+            }
+            return Content("Something went wrong..");
         }
         #endregion
     }
 }
+

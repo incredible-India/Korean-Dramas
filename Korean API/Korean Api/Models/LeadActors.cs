@@ -19,7 +19,7 @@ namespace Korean_Api.Models
     }
 }
 //get actor by id
-//delete actor 
+//delete actor by id 
 //model in which three filed are there one default id , second one is actorId, List<movies> movie
 //string movies
 

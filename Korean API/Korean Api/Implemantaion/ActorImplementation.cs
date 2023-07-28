@@ -13,11 +13,32 @@ namespace Korean_Api.Implemantaion
             _koreanContext = koreanContext;
         }
 
+        public int DeleteActorById(int id)
+        {
+            LeadActors? hero = _koreanContext.ActorsTable.Where(x=>x.Id == id).FirstOrDefault();
+            if (hero != null)
+            {
+                _koreanContext.Remove(hero);
+                _koreanContext.SaveChanges();
+                return 1;
+
+            }
+            else
+            {
+                return 0;
+            }  
+        }
+
         public LeadActors GetActorById(int id)
         {
-           
-            LeadActors? a = _koreanContext.ActorsTable.Where(x=>x.Id == id).FirstOrDefault();
+            LeadActors? a = _koreanContext.ActorsTable.Where(x=>x.Id == id).FirstOrDefault(); 
             return a;
+        }
+
+        public List<LeadActors> GetAllActors()
+        {
+            List<LeadActors>? list = _koreanContext.ActorsTable.ToList();
+            return list;
         }
 
         public LeadActors NewActor(LeadActors lActor)

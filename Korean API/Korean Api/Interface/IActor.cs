@@ -6,5 +6,7 @@ namespace Korean_Api.Interface
     {
         public LeadActors NewActor(LeadActors lActor);
         public LeadActors GetActorById(int id);
+        public int DeleteActorById(int id);
+        public List<LeadActors> GetAllActors();
     }
 }
