@@ -12,6 +12,23 @@ namespace Korean_Api.Implemantaion
             _dbContext = koreanContext;
         }
 
+        //deleting the user
+        public int DeleteUserById(int id)
+        {
+            var user = _dbContext.users.Where(x => x.id == id).FirstOrDefault();
+
+                if(user != null)
+                 {
+                    //if user exist
+                    _dbContext.Remove(user);
+                    _dbContext.SaveChanges();
+                     return 1;
+                    
+                 }else { return 0;
+            }
+
+        }
+
         public dynamic Login(string email, string password)
         {
             //checking the email
@@ -67,6 +84,11 @@ namespace Korean_Api.Implemantaion
 
 
             
+        }
+
+        public List<Users> GetUsers()
+        {
+            return _dbContext.users.ToList();
         }
     }
 }

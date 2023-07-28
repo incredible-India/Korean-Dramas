@@ -3,6 +3,7 @@ using Korean_Api.Interface;
 using Korean_Api.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Korean_Api.Controllers
 {
@@ -56,8 +57,27 @@ namespace Korean_Api.Controllers
         #endregion
 
 
+        #region Delete
+        [HttpDelete("delete/{userID:int}")]
+        public IActionResult DeleteUser([FromRoute] int userID)
+        {
+            int isDeleted = _user.DeleteUserById(userID);
+            if(isDeleted == 0) { return Ok("Given id Does not Exist.."); }
+            else { return Ok("User Has been deleted Successfully.."); }
+           
+        }
+        #endregion
 
 
-
+        #region Get
+        [HttpGet("getallusers")]
+        public IActionResult GetAllUser()
+        {
+           var a= _user.GetUsers();
+            if(a.Count > 0)
+                return Ok(a);
+            return Ok("No User Exist");
+        }
+        #endregion
     }
 }
