@@ -10,5 +10,11 @@ namespace Korean_Api.Interface
         //login user
 
         public dynamic Login(string email, string password );
+
+        //deleting the user
+        public int DeleteUserById(int id);
+
+        //list if the users
+         public List<Users> GetUsers();
     }
 }
