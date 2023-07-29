@@ -50,8 +50,26 @@ namespace Korean_Api.Controllers
 
         //add fav actors/actress
         [HttpPost("Addfav")]
-        public IActionResult Addfav() {
-            return Ok();
+        public IActionResult Addfav(FavLead favLead) {
+
+            int isAdded = _user.AddfavActor(favLead);
+            if(isAdded == 0)
+            {
+                return Ok("Something went wrong !!!");
+            }
+            else
+            {
+                Users u = _user.GetUserById(favLead.ActorId);
+                if(u!=null)
+                {
+                    return Ok(u);
+                }
+                else
+                {
+                    return Ok("Something went wrong !!!");
+                }
+            }
+           
          }
 
         #endregion

@@ -17,14 +17,17 @@ namespace Korean_Api.Implemantaion
         {
             var user = _dbContext.users.Where(x => x.id == id).FirstOrDefault();
 
-                if(user != null)
-                 {
-                    //if user exist
-                    _dbContext.Remove(user);
-                    _dbContext.SaveChanges();
-                     return 1;
-                    
-                 }else { return 0;
+            if (user != null)
+            {
+                //if user exist
+                _dbContext.Remove(user);
+                _dbContext.SaveChanges();
+                return 1;
+
+            }
+            else
+            {
+                return 0;
             }
 
         }
@@ -37,7 +40,7 @@ namespace Korean_Api.Implemantaion
             if (users != null)
             {
                 //if email exist then check for the password
-                if(users.Password == password)
+                if (users.Password == password)
                 {
                     //if password is correct send the user information
                     return users;
@@ -54,14 +57,14 @@ namespace Korean_Api.Implemantaion
             }
         }
 
-        public Dictionary<string,string> NewUserRegistration(Users user)
+        public Dictionary<string, string> NewUserRegistration(Users user)
         {
 
             Dictionary<string, string> status = new Dictionary<string, string>();
 
             //cheking user already exist ir not
 
-            bool isExist = _dbContext.users.Any(x=>x.Email == user.Email);
+            bool isExist = _dbContext.users.Any(x => x.Email == user.Email);
             if (isExist)
             {
                 status.Add("Status", "400");
@@ -83,12 +86,53 @@ namespace Korean_Api.Implemantaion
 
 
 
-            
+
         }
 
         public List<Users> GetUsers()
         {
             return _dbContext.users.ToList();
         }
+        //adding the Actor 
+        public int AddfavActor(FavLead fa)
+        {
+            //first check the user exist or not 
+            bool isUserExist = _dbContext.users.Where(x => x.id == fa.UserId).Any();
+            if (isUserExist)
+            {
+                //then check actor exist or not
+                bool isActorExist = _dbContext.ActorsTable.Where(x => x.Id == fa.ActorId).Any();
+                if (isActorExist)
+                {
+                    //if user and actor both exist then save the in database
+                    FavLead fv = new FavLead()
+                    {
+                        ActorId = fa.ActorId,
+                        UserId = fa.UserId,
+                    };
+                    _dbContext.favActor.Add(fv);
+                    _dbContext.SaveChanges();
+                    return 1;
+
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        //get user by Id
+        public Users GetUserById(int id)
+        {
+            return _dbContext.users
+                .Where(x => x.id == id).FirstOrDefault();
+        }
+
+
+
     }
 }

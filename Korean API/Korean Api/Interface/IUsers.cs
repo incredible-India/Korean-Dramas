@@ -16,5 +16,11 @@ namespace Korean_Api.Interface
 
         //list if the users
          public List<Users> GetUsers();
+
+        //adding the fav leader 
+        public int AddfavActor(FavLead fa);
+
+        //get user by id
+        public Users GetUserById(int id);
     }
 }
