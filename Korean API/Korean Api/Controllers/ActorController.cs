@@ -74,7 +74,7 @@ namespace Korean_Api.Controllers
         }
         #endregion
 
-        #region Delete
+     #region Delete
         //Delete actor details by id
         [HttpDelete("DeleteActor/{actorId:int}")]
         public IActionResult DeleteActor([FromRoute] int actorId)
@@ -87,6 +87,22 @@ namespace Korean_Api.Controllers
             return Content("Something went wrong..");
         }
         #endregion
+
+        //Update actor
+        [HttpPut("UpdateActor/{actorId:int}")]
+        public IActionResult UpdateActor([FromRoute]int actorId, [FromBody] LeadActors actor)
+        {
+            var upd = _actor.UpdateActorInfo(actorId, actor);
+            if (upd != 1)
+            {
+                return Content("Actor details cannot be updated..");
+            }
+            else
+            {
+                LeadActors ac = _actor.GetActorById(actorId);
+                return Ok(ac);
+            }
+        }
     }
 }
 

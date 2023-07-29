@@ -16,6 +16,7 @@ namespace Korean_Api.Database
         public DbSet<Movies> movies { get; set; }
 
         public DbSet<FavLead> favActor { get; set; }
+        public DbSet<Details> details { get; set; }
 
     }
 }

@@ -76,5 +76,35 @@ namespace Korean_Api.Implemantaion
             _koreanContext.SaveChanges();
             return lActor;
         }
+
+        public int UpdateActorInfo(int id, LeadActors actor)
+        {
+            //checking if the id entered exists in the db
+            var ac = _koreanContext.ActorsTable.Where(x => x.Id == id);
+
+            if(ac.Any())
+            {
+                var a = ac.FirstOrDefault();
+
+                a.NoOfAwards =actor.NoOfAwards;
+                a.NoOfMovies =actor.NoOfMovies;
+                a.LatestMovie =actor.LatestMovie;
+                a.MaritalStatus =actor.MaritalStatus;
+                a.Age =actor.Age;
+                a.DOB =actor.DOB;
+                a.Nationality =actor.Nationality;
+                a.Gender =actor.Gender;
+                a.Name =actor.Name;
+
+               int  b = _koreanContext.SaveChanges();
+                return b;
+            }
+            else
+            {
+                return 0;
+            }
+
+
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace Korean_Api.Interface
         public List<LeadActors> GetAllActors();
         public Movies AddMovies(TempMovies temp);
         public List<string> GetAllMoviesByActorId(int Actorid);
+        public int UpdateActorInfo (int id, LeadActors actor);
     }
 }
