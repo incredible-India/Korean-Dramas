@@ -29,9 +29,14 @@ namespace Korean_Api.Controllers
         [HttpPost("AddMovies")]
         public IActionResult AddMovies([FromBody] TempMovies temp )
         {
-            return Ok(temp);
+          Movies m =   _actor.AddMovies(temp);
+            TempMovies tempMovies = new TempMovies()
+            {
+                ActorId = m.ActorId,
+                movies =  m.movies.Split(",").ToList(),
+            };
+            return Ok(tempMovies);
         }
-
 
         #endregion
 
@@ -58,6 +63,14 @@ namespace Korean_Api.Controllers
                 return Ok(l);
             }
             return Content("No actors found...");
+        }
+
+        //Get all movies by id
+        [HttpGet("GetAllMovies/{id:int}")]
+        public IActionResult GetAllMovies([FromRoute] int id)
+        {
+            var list = _actor.GetAllMoviesByActorId(id);
+            return Ok(list);
         }
         #endregion
 
