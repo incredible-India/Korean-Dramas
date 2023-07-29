@@ -13,6 +13,8 @@ namespace Korean_Api.Database
 
         public DbSet<Users> users { get; set; }
 
+        public DbSet<Movies> movies { get; set; }
+
         public DbSet<FavLead> favActor { get; set; }
 
     }

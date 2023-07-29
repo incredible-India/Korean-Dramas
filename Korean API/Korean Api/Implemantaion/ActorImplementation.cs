@@ -2,7 +2,7 @@
 using Korean_Api.Interface;
 using Korean_Api.Models;
 using System.Numerics;
-
+using System.Text.Json;
 namespace Korean_Api.Implemantaion
 {
     public class ActorImplementation : IActor
@@ -11,6 +11,19 @@ namespace Korean_Api.Implemantaion
         public ActorImplementation(KoreanContext koreanContext)
         {
             _koreanContext = koreanContext;
+        }
+
+        public Movies AddMovies(TempMovies temp)
+        {
+            Movies? movie = new Movies()
+            {
+                ActorId = temp.ActorId,
+                movies = string.Join(",", temp.movies)
+            };
+            _koreanContext.movies.Add(movie);
+            _koreanContext.SaveChanges();
+
+            return movie;
         }
 
         public int DeleteActorById(int id)
@@ -39,6 +52,22 @@ namespace Korean_Api.Implemantaion
         {
             List<LeadActors>? list = _koreanContext.ActorsTable.ToList();
             return list;
+        }
+
+        public List<string> GetAllMoviesByActorId(int Actorid)
+        {
+            bool isExist = _koreanContext.ActorsTable.Where(x=>x.Id == Actorid).Any();
+            if(isExist)
+            {
+                Movies mov = _koreanContext.movies.Where(x => x.Id == Actorid).FirstOrDefault();
+                List<string> m = mov.movies.Split(",").ToList();
+                return m;
+            }
+            else
+            {
+                return null;
+            }
+         
         }
 
         public LeadActors NewActor(LeadActors lActor)

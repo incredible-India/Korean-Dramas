@@ -8,5 +8,7 @@ namespace Korean_Api.Interface
         public LeadActors GetActorById(int id);
         public int DeleteActorById(int id);
         public List<LeadActors> GetAllActors();
+        public Movies AddMovies(TempMovies temp);
+        public List<string> GetAllMoviesByActorId(int Actorid);
     }
 }
