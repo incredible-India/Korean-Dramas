@@ -59,7 +59,7 @@ namespace Korean_Api.Controllers
             }
             else
             {
-                Users u = _user.GetUserById(favLead.ActorId);
+                Users u = _user.GetUserById(favLead.UserId);
                 if(u!=null)
                 {
                     return Ok(u);
@@ -97,5 +97,7 @@ namespace Korean_Api.Controllers
             return Ok("No User Exist");
         }
         #endregion
+
+
     }
 }
