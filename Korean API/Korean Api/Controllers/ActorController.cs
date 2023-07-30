@@ -38,6 +38,27 @@ namespace Korean_Api.Controllers
             return Ok(tempMovies);
         }
 
+        //Add dramas of actor
+        [HttpPost("AddDramas")]
+        public IActionResult AddDramas([FromBody] TempDramas temp)
+        {
+            Dramas dr = _actor.AddDramas(temp);
+            TempDramas tempDramas = new TempDramas()
+            {
+                ActorId = dr.ActorId,
+                DramaName = dr.DramaName.Split(",").ToList(),
+            };
+            return Ok(tempDramas);
+        }
+
+        //Add details about actor
+        [HttpPost("AddDetails")]
+        public IActionResult AddDetails([FromBody] Details det)
+        {
+            Details d = _actor.AddDetailsOfActor(det);
+            return Ok(d);
+        }
+
         #endregion
 
         #region GET

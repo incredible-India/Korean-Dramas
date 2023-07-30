@@ -13,6 +13,32 @@ namespace Korean_Api.Implemantaion
             _koreanContext = koreanContext;
         }
 
+        public Details AddDetailsOfActor(Details detail)
+        {
+            Details? det = new Details()
+            {
+                ActorId = detail.ActorId,
+                Detail = detail.Detail
+            };
+            _koreanContext.details.Add(det);
+            _koreanContext.SaveChanges();
+
+            return det;
+        }
+
+        public Dramas AddDramas(TempDramas tempd)
+        {
+            Dramas? drama = new Dramas()
+            {
+                ActorId = tempd.ActorId,
+                DramaName = string.Join(",", tempd.DramaName)
+            };
+            _koreanContext.DramasTable.Add(drama);
+            _koreanContext.SaveChanges();
+
+            return drama;
+        }
+
         public Movies AddMovies(TempMovies temp)
         {
             Movies? movie = new Movies()

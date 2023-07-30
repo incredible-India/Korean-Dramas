@@ -3,6 +3,7 @@ using Korean_Api.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Korean_Api.Migrations
 {
     [DbContext(typeof(KoreanContext))]
-    partial class KoreanContextModelSnapshot : ModelSnapshot
+    [Migration("20230730084947_detail")]
+    partial class detail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,26 +42,6 @@ namespace Korean_Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("details");
-                });
-
-            modelBuilder.Entity("Korean_Api.Models.Dramas", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ActorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DramaName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DramasTable");
                 });
 
             modelBuilder.Entity("Korean_Api.Models.FavLead", b =>
@@ -144,26 +127,6 @@ namespace Korean_Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("movies");
-                });
-
-            modelBuilder.Entity("Korean_Api.Models.TVShows", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ActorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TvShows")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TVShowsTable");
                 });
 
             modelBuilder.Entity("Korean_Api.Models.Users", b =>
