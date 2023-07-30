@@ -2,6 +2,7 @@
 using Korean_Api.Database;
 using Korean_Api.Implemantaion;
 using Korean_Api.Interface;
+using Korean_Api.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -15,7 +16,7 @@ namespace Korean_Api
 
             // Add services to the container.
             builder.Services.AddScoped<IActor,ActorImplementation>();
-
+            builder.Services.AddScoped<ApiKeyAuthetication>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -39,6 +40,7 @@ namespace Korean_Api
 
             app.UseAuthorization();
 
+            app.UseAuthentication();
 
             app.MapControllers();
 

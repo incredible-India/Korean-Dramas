@@ -1,4 +1,5 @@
 ﻿using Korean_Api.Interface;
+using Korean_Api.Middleware;
 using Korean_Api.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ namespace Korean_Api.Controllers
 {
     [Route("api/actor")]
     [ApiController]
+    [ApiKeyAuthetication]
     public class ActorController : ControllerBase
     {
         private readonly IActor _actor;
