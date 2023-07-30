@@ -52,6 +52,19 @@ namespace Korean_Api.Implemantaion
             return movie;
         }
 
+        public TVShows AddTvShows(TempShows temps)
+        {
+            TVShows? tvShows = new TVShows()
+            {
+                ActorId = temps.ActorId,
+                TvShows = string.Join(",", temps.TvShows)
+            };
+            _koreanContext.TVShowsTable.Add(tvShows);
+            _koreanContext.SaveChanges();
+
+            return tvShows;
+        }
+
         public int DeleteActorById(int id)
         {
             LeadActors? hero = _koreanContext.ActorsTable.Where(x=>x.Id == id).FirstOrDefault();

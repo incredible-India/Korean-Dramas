@@ -13,5 +13,6 @@ namespace Korean_Api.Interface
         public int UpdateActorInfo (int id, LeadActors actor);
         public Details AddDetailsOfActor (Details detail);
         public Dramas AddDramas(TempDramas tempd);
+        public TVShows AddTvShows(TempShows temps);
     }
 }

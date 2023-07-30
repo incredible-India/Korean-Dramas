@@ -59,6 +59,19 @@ namespace Korean_Api.Controllers
             return Ok(d);
         }
 
+        //add tvshows of actor
+        [HttpPost("AddShows")]
+        public IActionResult AddShows([FromBody] TempShows tempShows)
+        {
+            TVShows show = _actor.AddTvShows(tempShows);
+            TempShows temp = new TempShows()
+            {
+                ActorId = show.ActorId,
+                TvShows = show.TvShows.Split(",").ToList(),
+            };
+            return Ok(temp);
+        }
+
         #endregion
 
         #region GET
