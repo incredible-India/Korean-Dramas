@@ -15,18 +15,27 @@ namespace Korean_Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddScoped<IActor,ActorImplementation>();
+            builder.Services.AddScoped<IActor, ActorImplementation>();
             builder.Services.AddScoped<ApiKeyAuthetication>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-         
+
             //connecting to the database
             //databse connection
             string? con = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<KoreanContext>(builder => { builder.UseSqlServer(con).EnableSensitiveDataLogging(); });
             builder.Services.TryAddScoped<IUsers, UserImplementaion>();
+
+
+            builder.Services.AddCors(option =>
+            {
+                option.AddDefaultPolicy(bulider =>
+                {
+                    bulider.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -36,7 +45,10 @@ namespace Korean_Api
                 app.UseSwaggerUI();
             }
 
+
             app.UseHttpsRedirection();
+      
+                app.UseCors();
 
             app.UseAuthorization();
 
