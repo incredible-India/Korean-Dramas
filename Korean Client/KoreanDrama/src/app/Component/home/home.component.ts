@@ -15,16 +15,37 @@ export class HomeComponent implements OnInit {
 
 
   ActorsData:any;
+  TopShowsData :any;
+  TopMovies : any[]=[]
+  TopDramas : any[]=[]
+  TopShows : any[]=[]
 
 ngOnInit(): void {
   
   this.com.GetAllActors().subscribe(data=>{
-    console.log(data);
+    
     this.ActorsData =data;
     
   })
+
+  this.com.GetAllTopShows().subscribe(data=>{
+  
+    for(let i in data){
+      
+      if(data[i].showType=="Drama"){
+
+        this.TopDramas.push(data[i])
+      }
+      else if(data[i].showType=="Movie"){
+        this.TopMovies.push(data[i])
+      }
+      else{
+        this.TopShows.push(data[i])
+      }
+      
+    }
+    console.log(this.TopDramas,this.TopMovies,this.TopShows)
+  })
 }
-
-
 
 }

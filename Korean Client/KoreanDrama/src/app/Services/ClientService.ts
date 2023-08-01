@@ -30,7 +30,23 @@ export class CommunicationFromServer{
        
         return res;
 
+    }
 
+    //To get top shows (drama,movie and tvshows)
+    GetAllTopShows():Observable<any>{
+
+        const url =  this.baseurl + "/api/actor/GetAllTopShows";
+
+       
+        
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+
+        var res = this.http.get(url,{headers:header})
+console.log(res);
+
+     
+       
+        return res;
 
     }
 

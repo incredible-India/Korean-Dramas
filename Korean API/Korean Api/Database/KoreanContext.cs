@@ -19,6 +19,7 @@ namespace Korean_Api.Database
         public DbSet<Details> details { get; set; }
         public DbSet<Dramas> DramasTable { get; set; }
         public DbSet<TVShows> TVShowsTable { get; set;}
+        public DbSet<TopMovies> TopMoviesTable { get; set;}
 
     }
 }

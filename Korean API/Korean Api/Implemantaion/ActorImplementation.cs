@@ -52,6 +52,20 @@ namespace Korean_Api.Implemantaion
             return movie;
         }
 
+        public TopMovies AddTopShows(TopMovies show)
+        {
+            TopMovies? topShow = new TopMovies()
+            {
+                ActorName = show.ActorName,
+                ShowType = show.ShowType,
+                MovieName = show.MovieName
+            };
+            _koreanContext.TopMoviesTable.Add(topShow);
+            _koreanContext.SaveChanges();
+
+            return topShow;
+        }
+
         public TVShows AddTvShows(TempShows temps)
         {
             TVShows? tvShows = new TVShows()
@@ -107,6 +121,12 @@ namespace Korean_Api.Implemantaion
                 return null;
             }
          
+        }
+
+        public List<TopMovies> GetAllTopMovies()
+        {
+            List<TopMovies> m = _koreanContext.TopMoviesTable.ToList();
+            return m;
         }
 
         public LeadActors NewActor(LeadActors lActor)

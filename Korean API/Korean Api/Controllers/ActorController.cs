@@ -74,6 +74,14 @@ namespace Korean_Api.Controllers
             return Ok(temp);
         }
 
+        //To show top shows(movies,drama & tvshows)
+        [HttpPost("TopShows")]
+        public IActionResult TopShows([FromBody] TopMovies shows)
+        {
+            TopMovies top = _actor.AddTopShows(shows);
+            return Ok(top);
+        }
+
         #endregion
 
         #region GET
@@ -106,6 +114,14 @@ namespace Korean_Api.Controllers
         public IActionResult GetAllMovies([FromRoute] int id)
         {
             var list = _actor.GetAllMoviesByActorId(id);
+            return Ok(list);
+        }
+
+        //Get all movies,drama and shows list
+        [HttpGet("GetAllTopShows")]
+        public IActionResult GetAllTopShows()
+        {
+            var list = _actor.GetAllTopMovies();
             return Ok(list);
         }
         #endregion
