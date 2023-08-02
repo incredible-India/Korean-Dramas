@@ -1,6 +1,7 @@
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, catchError,map,of} from "rxjs";
 import {  Injectable } from "@angular/core";
+import { newUser } from "../Models/newuser";
 
 
 @Injectable({
@@ -39,7 +40,7 @@ export class CommunicationFromServer{
 
        
         
-        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu").set('Content-Type','application/json');
 
         var res = this.http.get(url,{headers:header})
 console.log(res);
@@ -50,5 +51,15 @@ console.log(res);
 
     }
 
+//new user registration
+NewUser(body:newUser):Observable<any>{
+const url = this.baseurl + '/api/user/newuser';
+const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+console.log(body);
+
+var res=this.http.post(url, body,{ headers : header });
+return res;
+
+}
 
 }
