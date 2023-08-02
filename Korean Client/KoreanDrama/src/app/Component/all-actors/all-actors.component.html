@@ -1,0 +1,21 @@
+<div class="container-fluid bg-dark">
+    <div class="bg-dark" style="  margin-top: 0px; padding: 20px;">
+      <h4 class="text-danger" style="padding: 12px;">All Actors</h4>
+    </div>
+<div class="container">
+  
+    <div class="row bg-dark" >
+  
+    
+      
+      <div class="col-sm-3" *ngFor="let item of ActorsData">
+<div class="card" style="width: 18rem; margin-top: 10px;">
+    <img class="card-img-top" src="./../../../assets/Images/lee.jpg" alt="Card image cap">
+    <div class="card-body">
+      <!-- <h5 class="card-title">Card title</h5> -->
+      <p class="card-text"><b>Name : {{item.name}}</b></p>
+      <p class="card-text"><b>DOB : {{item.dob}}</b></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>

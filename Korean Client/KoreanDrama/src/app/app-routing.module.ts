@@ -2,10 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Component/home/home.component';
+import { AllActorsComponent } from './Component/all-actors/all-actors.component';
+import { AllDramasComponent } from './Component/all-dramas/all-dramas.component';
+import { AllMoviesComponent } from './Component/all-movies/all-movies.component';
+import { AllShowsComponent } from './Component/all-shows/all-shows.component';
 
 const routes: Routes = [
 
-  {path: '' , component:HomeComponent}
+  {path: '' , component:HomeComponent},
+  {path:"actors", component:AllActorsComponent},
+  {path:"dramas", component:AllDramasComponent},
+  {path:"movies", component:AllMoviesComponent},
+  {path:"shows", component:AllShowsComponent}
   ,{path : "user",loadChildren:()=>import('./Modules/users/users.module').then(mod=>mod.UsersModule)}
 
 ];
