@@ -49,6 +49,21 @@ console.log(res);
         return res;
 
     }
+    GetActorDetails(actorId:any):Observable<any>{
+
+        const url =  this.baseurl + `/api/actor/getactor/${actorId}`;
+
+       
+        
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+
+        var res = this.http.get(url,{headers:header})
+
+     
+       
+        return res;
+
+    }
 
 
 }

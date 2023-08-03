@@ -9,6 +9,7 @@ import { AllActorsComponent } from './Component/all-actors/all-actors.component'
 import { AllDramasComponent } from './Component/all-dramas/all-dramas.component';
 import { AllMoviesComponent } from './Component/all-movies/all-movies.component';
 import { AllShowsComponent } from './Component/all-shows/all-shows.component';
+import { ActorDetailsComponent } from './Component/actor-details/actor-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AllShowsComponent } from './Component/all-shows/all-shows.component';
     AllActorsComponent,
     AllDramasComponent,
     AllMoviesComponent,
-    AllShowsComponent
+    AllShowsComponent,
+    ActorDetailsComponent
   ],
   imports: [
     BrowserModule,

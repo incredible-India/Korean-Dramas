@@ -6,6 +6,7 @@ import { AllActorsComponent } from './Component/all-actors/all-actors.component'
 import { AllDramasComponent } from './Component/all-dramas/all-dramas.component';
 import { AllMoviesComponent } from './Component/all-movies/all-movies.component';
 import { AllShowsComponent } from './Component/all-shows/all-shows.component';
+import { ActorDetailsComponent } from './Component/actor-details/actor-details.component';
 
 const routes: Routes = [
 
@@ -13,8 +14,9 @@ const routes: Routes = [
   {path:"actors", component:AllActorsComponent},
   {path:"dramas", component:AllDramasComponent},
   {path:"movies", component:AllMoviesComponent},
-  {path:"shows", component:AllShowsComponent}
-  ,{path : "user",loadChildren:()=>import('./Modules/users/users.module').then(mod=>mod.UsersModule)}
+  {path:"tShows", component:AllShowsComponent},
+  {path:"getActorDetails/:id", component:ActorDetailsComponent},
+  {path : "user",loadChildren:()=>import('./Modules/users/users.module').then(mod=>mod.UsersModule)}
 
 ];
 
