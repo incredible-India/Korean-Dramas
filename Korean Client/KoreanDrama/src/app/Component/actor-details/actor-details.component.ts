@@ -13,6 +13,7 @@ constructor(private route: ActivatedRoute,private com: CommunicationFromServer){
 }
   actorId = this.route.snapshot.paramMap.get('id');
   actordeatils:any
+  moviedetails:any[]=[]
 
   ngOnInit(): void {
   
@@ -22,6 +23,11 @@ constructor(private route: ActivatedRoute,private com: CommunicationFromServer){
       console.log(this.actordeatils);
       
       
+    })
+
+    this.com.GetAllMovies(this.actorId).subscribe(data=>{
+      this.moviedetails = data;
+      console.log(this.moviedetails);
     })
   }
 

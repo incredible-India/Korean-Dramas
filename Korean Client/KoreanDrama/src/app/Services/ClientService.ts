@@ -65,6 +65,22 @@ console.log(res);
         return res;
 
     }
+    //to get all movies of the actor
+    GetAllMovies(actorId:any):Observable<any>{
+
+        const url =  this.baseurl + `/api/actor/GetAllMovies/${actorId}`;
+
+       
+        
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+
+        var res = this.http.get(url,{headers:header})
+
+     
+       
+        return res;
+
+    }
 
 //new user registration
 NewUser(body:newUser):Observable<any>{

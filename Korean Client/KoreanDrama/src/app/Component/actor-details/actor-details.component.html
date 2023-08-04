@@ -29,6 +29,26 @@
             Quos beatae natus culpa deserunt hic reiciendis aperiam libero consequatur odit. Accusamus excepturi laboriosam molestiae ea voluptatum nihil minima deserunt aperiam asperiores adipisci doloremque optio quasi quidem, hic dolores tempora.
             Nam inventore ratione aliquid laboriosam pariatur porro facilis harum et eaque commodi laborum fugiat est adipisci nisi culpa sequi rerum eligendi non, repellat ullam corporis! Officia soluta nisi nostrum maiores.
             In ex facere praesentium maxime nulla. Sint labore laborum quam iusto, similique praesentium nihil tenetur blanditiis modi unde sunt! Est distinctio placeat labore quo itaque eveniet autem, sapiente consequuntur eligendi.
+
+        <hr>
+
+        <table class="table-stripped table table-dark bg-dark">
+            <thead>
+            <tr>
+                <th>movies</th>
+                <th>Ratings</th>
+            </tr>
+            </thead>
+<tbody>
+ <ng-container *ngFor="let item of moviedetails">
+    <tr>
+        <td>{{item}}</td>
+        <td class="text-warning">✰✰✰✰✰</td>
+    </tr>
+ </ng-container>
+</tbody>
+        </table>
+
         </div>
     </div>
 </div>
