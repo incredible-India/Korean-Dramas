@@ -13,8 +13,8 @@ namespace Korean_Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            builder.Services.AddControllersWithViews();
+            
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
             // Add services to the container.
             builder.Services.AddScoped<IActor, ActorImplementation>();
             builder.Services.AddScoped<ApiKeyAuthetication>();
@@ -54,11 +54,11 @@ namespace Korean_Api
             app.UseAuthorization();
             app.UseStaticFiles();
             app.UseAuthentication();
-
+            
             app.MapControllers();
             app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}");
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}");
             app.Run();
         }
     }
