@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "YQMXAM/9VBKP6PSvfwE2Gzlb92ANBAUSZ5F/UAHnWHo=",
+  "Hash": "8AoOZ93bjXspLENHnTfM1is1QQSxc4J5sIZaQJ/mRE0=",
   "Source": "Korean Api",
   "BasePath": "_content/Korean Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Korean Api\\wwwroot",
+      "Source": "Korean Api",
+      "ContentRoot": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\wwwroot\\",
+      "BasePath": "_content/Korean Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\wwwroot\\Images\\lee.jpg",
+      "SourceId": "Korean Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\wwwroot\\",
+      "BasePath": "_content/Korean Api",
+      "RelativePath": "Images/lee.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\lee.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\wwwroot\\Images\\lee2.jpg",
+      "SourceId": "Korean Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\wwwroot\\",
+      "BasePath": "_content/Korean Api",
+      "RelativePath": "Images/lee2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\lee2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\wwwroot\\Images\\lee3.jpg",
+      "SourceId": "Korean Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\wwwroot\\",
+      "BasePath": "_content/Korean Api",
+      "RelativePath": "Images/lee3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\lee3.jpg"
+    }
+  ]
 }

@@ -9,9 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Korean_Api
 build_property.RootNamespace = Korean_Api
-build_property.ProjectDir = C:\Users\namya.hs\Desktop\K API\Korean-Dramas\Korean API\Korean Api\
+build_property.ProjectDir = C:\Users\himanshu.y.sharma\Desktop\Korean-Dramas\Korean API\Korean Api\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\namya.hs\Desktop\K API\Korean-Dramas\Korean API\Korean Api
+build_property.MSBuildProjectDirectory = C:\Users\himanshu.y.sharma\Desktop\Korean-Dramas\Korean API\Korean Api
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/himanshu.y.sharma/Desktop/Korean-Dramas/Korean API/Korean Api/Views/Home/AddActor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRBY3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/himanshu.y.sharma/Desktop/Korean-Dramas/Korean API/Korean Api/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/himanshu.y.sharma/Desktop/Korean-Dramas/Korean API/Korean Api/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/himanshu.y.sharma/Desktop/Korean-Dramas/Korean API/Korean Api/Views/Shared/_navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/himanshu.y.sharma/Desktop/Korean-Dramas/Korean API/Korean Api/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/himanshu.y.sharma/Desktop/Korean-Dramas/Korean API/Korean Api/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/himanshu.y.sharma/Desktop/Korean-Dramas/Korean API/Korean Api/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

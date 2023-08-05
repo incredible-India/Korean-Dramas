@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\namya.hs\\Desktop\\K API\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj": {}
+    "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\namya.hs\\Desktop\\K API\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj": {
+    "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\namya.hs\\Desktop\\K API\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj",
+        "projectUniqueName": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj",
         "projectName": "Korean Api",
-        "projectPath": "C:\\Users\\namya.hs\\Desktop\\K API\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj",
-        "packagesPath": "C:\\Users\\namya.hs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\namya.hs\\Desktop\\K API\\Korean-Dramas\\Korean API\\Korean Api\\obj\\",
+        "projectPath": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\Korean Api.csproj",
+        "packagesPath": "C:\\Users\\himanshu.y.sharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\himanshu.y.sharma\\Desktop\\Korean-Dramas\\Korean API\\Korean Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\namya.hs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\himanshu.y.sharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://pkgs.dev.azure.com/incadeadev/_packaging/incadea_nuget%40Local/nuget/v3/index.json": {}
         },
@@ -73,6 +75,10 @@
               "target": "Package",
               "version": "[7.0.9, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -97,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
