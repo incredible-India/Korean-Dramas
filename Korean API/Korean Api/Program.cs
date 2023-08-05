@@ -14,6 +14,7 @@ namespace Korean_Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddControllersWithViews();
             // Add services to the container.
             builder.Services.AddScoped<IActor, ActorImplementation>();
             builder.Services.AddScoped<ApiKeyAuthetication>();
@@ -48,14 +49,16 @@ namespace Korean_Api
 
             app.UseHttpsRedirection();
       
-                app.UseCors();
-
+            app.UseCors();
+            app.UseRouting();
             app.UseAuthorization();
-
+            app.UseStaticFiles();
             app.UseAuthentication();
 
             app.MapControllers();
-
+            app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}");
             app.Run();
         }
     }
