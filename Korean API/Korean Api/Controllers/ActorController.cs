@@ -9,7 +9,7 @@ namespace Korean_Api.Controllers
 {
     [Route("api/actor")]
     [ApiController]
-    [ApiKeyAuthetication]
+    //[ApiKeyAuthetication]
     public class ActorController : ControllerBase
     {
         private readonly IActor _actor;
@@ -123,6 +123,14 @@ namespace Korean_Api.Controllers
         {
             var list = _actor.GetAllTopMovies();
             return Ok(list);
+        }
+
+        //to get details of actor 
+        [HttpGet("GetDetails/{id:int}")]
+        public IActionResult GetDetails([FromRoute] int id) 
+        {
+            var det = _actor.GetDetailsById(id);
+            return Ok(det);
         }
         #endregion
 

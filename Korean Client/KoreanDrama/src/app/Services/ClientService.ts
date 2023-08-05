@@ -82,6 +82,14 @@ console.log(res);
 
     }
 
+    GetDetails(actorId:any):Observable<any>{
+        const url = this.baseurl + `/api/actor/GetDetails/${actorId}`;
+
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+        var res = this.http.get(url,{headers:header})
+        return res;
+    }
+
 //new user registration
 NewUser(body:newUser):Observable<any>{
 const url = this.baseurl + '/api/user/newuser';

@@ -16,5 +16,6 @@ namespace Korean_Api.Interface
         public TVShows AddTvShows(TempShows temps);
         public TopMovies AddTopShows(TopMovies show);
         public List<TopMovies> GetAllTopMovies();
+        public Details GetDetailsById(int Actorid);
     }
 }

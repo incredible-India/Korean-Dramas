@@ -129,6 +129,12 @@ namespace Korean_Api.Implemantaion
             return m;
         }
 
+        public Details GetDetailsById(int Actorid)
+        {
+            Details? d = _koreanContext.details.Where(x=> x.Id == Actorid).FirstOrDefault();
+            return d;
+        }
+
         public LeadActors NewActor(LeadActors lActor)
         {
             _koreanContext.ActorsTable.Add(lActor);
