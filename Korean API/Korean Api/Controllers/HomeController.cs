@@ -55,5 +55,34 @@ namespace Korean_Api.Controllers
             return View(a);
 
         }
+
+        public IActionResult ActorList()
+        {
+            var a = _actor.GetAllActors();
+            return View(a);
+        }
+        public IActionResult DeleteActor(int id) 
+        {
+            _actor.DeleteActorById(id);
+            return RedirectToAction("ActorList");
+        }
+        public IActionResult ActorDetails(int id) 
+        {
+            var a = _actor.GetDetailsById(id);
+            return View(a);
+        }
+        public IActionResult UpdateActor(int id) 
+        {
+            var a =_actor.GetActorById(id);
+            return View(a);
+        }
+        [HttpPost]
+        public IActionResult UpdateActor(int id,LeadActors leadActors)
+        {
+            _actor.UpdateActorInfo(id, leadActors);
+            return RedirectToAction("ActorList");
+
+        }
+
     }
 }
