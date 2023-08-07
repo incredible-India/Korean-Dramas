@@ -7,10 +7,12 @@ namespace Korean_Api.Controllers
     public class HomeController : Controller
     {
         private readonly IActor _actor;
+        private readonly IUsers _user;
 
-        public HomeController(IActor actor)
+        public HomeController(IActor actor,IUsers users)
         {
           this._actor  =    actor;
+            this._user = users;
         }
         public IActionResult Index()
         {
@@ -42,6 +44,16 @@ namespace Korean_Api.Controllers
         public IActionResult AddUser()
         {
             return View();
+        }
+
+        //list of the user
+
+        public IActionResult UserList()
+        {
+            var a = _user.GetUsers();
+            
+            return View(a);
+
         }
     }
 }
