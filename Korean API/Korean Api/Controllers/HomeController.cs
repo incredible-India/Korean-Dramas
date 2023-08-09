@@ -84,5 +84,23 @@ namespace Korean_Api.Controllers
 
         }
 
+        public IActionResult AddDramas()
+        {
+            return View();
+        }
+
+
+        //add movies
+        [HttpPost]
+        public IActionResult AddDramas(TempDramas temp)
+        {
+            _actor.AddDramas(temp);
+            return View();
+        }
+
+        public IActionResult GetAlltopShow() {
+            var a =_actor.GetAllTopMovies();
+            return View(a);
+        }
     }
 }
