@@ -86,6 +86,8 @@ namespace Korean_Api.Controllers
 
         public IActionResult AddDramas()
         {
+            var a = _actor.GetAllActors();
+            ViewBag.a = a.ToList();
             return View();
         }
 
@@ -95,7 +97,38 @@ namespace Korean_Api.Controllers
         public IActionResult AddDramas(TempDramas temp)
         {
             _actor.AddDramas(temp);
+            return RedirectToAction("AddDramas");
+        }
+        
+        public IActionResult AddMovies()
+        {
+            var a = _actor.GetAllActors();
+            ViewBag.a = a.ToList();
             return View();
+        }
+
+
+        //add movies
+        [HttpPost]
+        public IActionResult AddMovies(TempMovies temp)
+        {
+            _actor.AddMovies(temp);
+            return RedirectToAction("AddMovies");
+        }
+        public IActionResult AddShows()
+        {
+            var a = _actor.GetAllActors();
+            ViewBag.a = a.ToList();
+            return View();
+        }
+
+
+        //add movies
+        [HttpPost]
+        public IActionResult AddShows(TempShows temp)
+        {
+            _actor.AddTvShows(temp);
+            return RedirectToAction("AddShows");
         }
 
         public IActionResult GetAlltopShow() {

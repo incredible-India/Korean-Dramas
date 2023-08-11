@@ -1,0 +1,48 @@
+﻿@model Korean_Api.Models.TVShows
+
+@{
+    ViewData["Title"] = "AddShows";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddShows</h1>
+
+<h4>TVShows</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddShows">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ActorId" class="control-label"></label>
+                <select asp-for="ActorId" class="form-control">
+                    @{
+
+                        foreach (var i in ViewBag.a)
+                        {
+                            <option value="@i.Id">@i.Name</option>
+                        }
+
+                    }
+                </select>
+                <span asp-validation-for="ActorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TvShows" class="control-label"></label>
+                <input asp-for="TvShows" class="form-control" />
+                <span asp-validation-for="TvShows" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
