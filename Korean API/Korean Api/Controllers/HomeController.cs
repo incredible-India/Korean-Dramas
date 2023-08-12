@@ -135,5 +135,21 @@ namespace Korean_Api.Controllers
             var a =_actor.GetAllTopMovies();
             return View(a);
         }
+
+        public IActionResult GetAllMoviesList()
+        {
+            var a = _actor.GetAllMovies();
+            return View(a);
+        }
+        public IActionResult GetAllDramasList() 
+        {
+            var a = _actor.GetAllDramas();
+            return View(a);
+        }
+        public IActionResult GetAllShowsList() 
+        {
+            var s  = _actor.GetAllTvShows();
+            return View(s);
+        }
     }
 }

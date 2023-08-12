@@ -107,6 +107,18 @@ namespace Korean_Api.Implemantaion
             return list;
         }
 
+        public List<Dramas> GetAllDramas()
+        {
+            List<Dramas> d = _koreanContext.DramasTable.ToList();
+            return d;
+        }
+
+        public List<Movies> GetAllMovies()
+        {
+            List<Movies>? m = _koreanContext.movies.ToList();
+            return m;
+        }
+
         public List<string> GetAllMoviesByActorId(int Actorid)
         {
             bool isExist = _koreanContext.ActorsTable.Where(x=>x.Id == Actorid).Any();
@@ -127,6 +139,12 @@ namespace Korean_Api.Implemantaion
         {
             List<TopMovies> m = _koreanContext.TopMoviesTable.ToList();
             return m;
+        }
+
+        public List<TVShows> GetAllTvShows()
+        {
+            List<TVShows> sh = _koreanContext.TVShowsTable.ToList();
+            return sh;
         }
 
         public Details GetDetailsById(int Actorid)

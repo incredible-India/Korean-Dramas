@@ -125,6 +125,30 @@ namespace Korean_Api.Controllers
             return Ok(list);
         }
 
+        //Get all movies
+        [HttpGet("GetMoviesList")]
+        public IActionResult GetMoviesList() 
+        {
+            var list = _actor.GetAllMovies();
+            return Ok(list);
+        }
+
+        //Get  all dramas
+        [HttpGet("GetDramasList")]
+        public IActionResult GetDramasList()
+        {
+            var drama = _actor.GetAllDramas();
+            return Ok(drama);
+        }
+        
+        //Get  all tv shows
+        [HttpGet("GetTvShowsList")]
+        public IActionResult GetTvShowsList()
+        {
+            var shows = _actor.GetAllTvShows();
+            return Ok(shows);
+        }
+
         //to get details of actor 
         [HttpGet("GetDetails/{id:int}")]
         public IActionResult GetDetails([FromRoute] int id) 
