@@ -13,6 +13,16 @@ namespace Korean_Api.Implemantaion
             _koreanContext = koreanContext;
         }
 
+
+        //delete the tv show
+        public void DeleteShowBYID(int id)
+        {
+            TVShows c =_koreanContext.TVShowsTable.Where(m => m.Id == id).FirstOrDefault();
+
+            _koreanContext.Remove(c);
+            _koreanContext.SaveChanges();
+
+        }
         public Details AddDetailsOfActor(Details detail)
         {
             Details? det = new Details()

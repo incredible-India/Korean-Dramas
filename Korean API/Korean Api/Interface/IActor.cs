@@ -4,6 +4,7 @@ namespace Korean_Api.Interface
 {
     public interface IActor
     {
+        public void DeleteShowBYID(int id);
         public LeadActors NewActor(LeadActors lActor);
         public LeadActors GetActorById(int id);
         public int DeleteActorById(int id);

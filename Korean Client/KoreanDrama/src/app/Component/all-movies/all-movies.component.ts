@@ -15,26 +15,13 @@ export class AllMoviesComponent {
   TopMovies : any[]=[]
   TopDramas : any[]=[]
   TopShows : any[]=[]
-
+  tempMovies : any;
   ngOnInit(): void {
 
-  this.com.GetAllTopShows().subscribe(data=>{
+    this.com.GetOnlyMovies().subscribe(data=>{
   
-    for(let i in data){
-      
-      if(data[i].showType=="Drama"){
-
-        this.TopDramas.push(data[i])
-      }
-      else if(data[i].showType=="Movie"){
-        this.TopMovies.push(data[i])
-      }
-      else{
-        this.TopShows.push(data[i])
-      }
-      
-    }
-    console.log(this.TopDramas,this.TopMovies,this.TopShows)
-  })
+      this.tempMovies =data;
+        console.log(this.tempMovies)
+      })
 }
 }

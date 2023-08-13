@@ -138,6 +138,8 @@ namespace Korean_Api.Controllers
 
         public IActionResult GetAllMoviesList()
         {
+            var b = _actor.GetAllActors();
+            ViewBag.b = b.ToList();
             var a = _actor.GetAllMovies();
             return View(a);
         }
@@ -150,6 +152,12 @@ namespace Korean_Api.Controllers
         {
             var s  = _actor.GetAllTvShows();
             return View(s);
+        }
+
+        public IActionResult DeleteTvShow(int id)
+        {
+            _actor.DeleteShowBYID(id);
+            return RedirectToAction("GetAllShowsList");
         }
     }
 }

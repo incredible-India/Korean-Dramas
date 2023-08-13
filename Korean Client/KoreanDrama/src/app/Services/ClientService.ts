@@ -33,6 +33,48 @@ export class CommunicationFromServer{
 
     }
 
+    //get only tv shows
+
+    GetOnlyTvShows():Observable<any>{
+
+        const url =  this.baseurl + "/api/actor/GetTvShowsList";       
+        
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu").set('Content-Type','application/json');
+
+        var res = this.http.get(url,{headers:header})
+console.log(res);
+
+     
+       
+        return res;
+    }
+
+    // get all dramas list
+    GetOnlyDramas():Observable<any>{
+
+        const url =  this.baseurl + "/api/actor/GetDramasList";       
+        
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu").set('Content-Type','application/json');
+
+        var res = this.http.get(url,{headers:header})
+console.log(res);
+       
+        return res;
+    }
+
+    //get all movies list
+    GetOnlyMovies():Observable<any>{
+
+        const url =  this.baseurl + "/api/actor/GetMoviesList";       
+        
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu").set('Content-Type','application/json');
+
+        var res = this.http.get(url,{headers:header})
+console.log(res);
+       
+        return res;
+    }
+
     //To get top shows (drama,movie and tvshows)
     GetAllTopShows():Observable<any>{
 
