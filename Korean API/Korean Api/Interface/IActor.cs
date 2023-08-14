@@ -21,5 +21,9 @@ namespace Korean_Api.Interface
         public List<Movies> GetAllMovies();
         public List<Dramas> GetAllDramas();
         public List<TVShows> GetAllTvShows();
+        public void DeleteDramaId(int id);
+        public void DeleteMovieById(int id);
+        public void UpdateMovie(int id, Movies movie);
+        public Movies GetMovieByID(int id);
     }
 }

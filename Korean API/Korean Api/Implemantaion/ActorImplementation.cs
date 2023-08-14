@@ -23,6 +23,21 @@ namespace Korean_Api.Implemantaion
             _koreanContext.SaveChanges();
 
         }
+        // delete drama
+        public void DeleteDramaId(int id)
+        {
+            Dramas d = _koreanContext.DramasTable.Where(m=>m.Id == id).FirstOrDefault();
+            _koreanContext.Remove(d);
+            _koreanContext.SaveChanges();
+        }
+
+        //delete movies
+        public void DeleteMovieById(int id)
+        {
+            Movies mov = _koreanContext.movies.Where(m=>m.Id == id).FirstOrDefault();
+            _koreanContext.Remove(mov);
+            _koreanContext.SaveChanges();
+        }
         public Details AddDetailsOfActor(Details detail)
         {
             Details? det = new Details()
@@ -198,6 +213,21 @@ namespace Korean_Api.Implemantaion
             }
 
 
+        }
+
+        //update movie
+        public void UpdateMovie(int id, Movies movie)
+        {
+            var a = _koreanContext.movies.Where(x => x.Id == id).FirstOrDefault();
+            a.movies = movie.movies;
+            a.ActorId = movie.ActorId;
+            _koreanContext.SaveChanges();
+               
+        }
+
+        public Movies GetMovieByID(int id)
+        {
+            return _koreanContext.movies.Where(m => m.Id == id).FirstOrDefault();
         }
     }
 }

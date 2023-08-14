@@ -15,7 +15,8 @@
       <!-- <h5 class="card-title">Card title</h5> -->
       <p class="card-text"><b>Name : {{item.name}}</b></p>
       <p class="card-text"><b>DOB : {{item.dob}}</b></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a routerLink="/getActorDetails/{{item.id}}">More details</a>
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

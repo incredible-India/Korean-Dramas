@@ -83,6 +83,17 @@ namespace Korean_Api.Controllers
             return RedirectToAction("ActorList");
 
         }
+        public IActionResult UpdateMovie(int id)
+        {
+            var a = _actor.GetMovieByID(id);
+            return View(a);
+        }
+        [HttpPost]
+        public IActionResult UpdateMovie(int id, Movies movie)
+        {
+            _actor.UpdateMovie(id, movie);
+            return RedirectToAction("GetAllMoviesList");
+        }
 
         public IActionResult AddDramas()
         {
@@ -143,10 +154,20 @@ namespace Korean_Api.Controllers
             var a = _actor.GetAllMovies();
             return View(a);
         }
+        public IActionResult DeleteMovie(int id) 
+        {
+            _actor.DeleteMovieById(id);
+            return RedirectToAction("GetAllMoviesList");
+        }
         public IActionResult GetAllDramasList() 
         {
             var a = _actor.GetAllDramas();
             return View(a);
+        }
+        public IActionResult DeleteDrama(int id)
+        {
+            _actor.DeleteDramaId(id);
+            return RedirectToAction("GetAllDramasList");
         }
         public IActionResult GetAllShowsList() 
         {
