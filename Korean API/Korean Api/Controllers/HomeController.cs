@@ -8,11 +8,13 @@ namespace Korean_Api.Controllers
     {
         private readonly IActor _actor;
         private readonly IUsers _user;
+        private readonly IWebHostEnvironment _env;
 
-        public HomeController(IActor actor,IUsers users)
+        public HomeController(IActor actor,IUsers users,IWebHostEnvironment webHostEnvironment)
         {
           this._actor  =    actor;
             this._user = users;
+            this._env = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -94,7 +96,56 @@ namespace Korean_Api.Controllers
             _actor.UpdateMovie(id, movie);
             return RedirectToAction("GetAllMoviesList");
         }
+        //Save image
+        public IActionResult SaveImage()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SavePostImage()
+        {
+            try
+            {
+                //checking whether the requested file exists
+                var _uploadedFile = Request.Form.Files;
+                foreach (IFormFile source in _uploadedFile)
+                {
+                    string Filename = source.FileName;
+                    string Filepath = GetFilepath(Filename);
 
+                    //checking whether that folder exists or else creating a new one with same name
+                    if (!System.IO.Directory.Exists(Filepath))
+                    {
+                        System.IO.Directory.CreateDirectory(Filepath);
+                    }
+
+                    string imagepath = Filepath + "\\image.png";
+
+                    if (System.IO.File.Exists(imagepath)){
+
+                        System.IO.File.Delete(imagepath);
+                    }
+                    using (FileStream stream = System.IO.File.Create(imagepath))
+                    {
+                        source.CopyTo(stream);
+                    }
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return RedirectToAction("SaveImage");
+        }
+        [NonAction]
+        private string GetFilepath(string filename)
+        {
+            return this._env.WebRootPath +"\\" +filename;
+        }
         public IActionResult AddDramas()
         {
             var a = _actor.GetAllActors();
