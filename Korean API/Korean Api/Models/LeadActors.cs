@@ -16,13 +16,12 @@ namespace Korean_Api.Models
         public string DOB { get; set; }
         public int NoOfAwards { get; set;}
 
+        public string ImageURL { get; set; }
+
     }
 }
-//get actor by id
-//delete actor by id 
-//model in which three filed are there one default id , second one is actorId, List<movies> movie
-//string movies
 
-//update actor
+
+
 
 

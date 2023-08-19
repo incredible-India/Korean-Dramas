@@ -229,5 +229,21 @@ namespace Korean_Api.Implemantaion
         {
             return _koreanContext.movies.Where(m => m.Id == id).FirstOrDefault();
         }
+
+        public void SaveActorImage(string image,int aid)
+        {
+            actorImage ac = new actorImage()
+            {
+                ActorId = aid,
+                Image = image
+            };
+            _koreanContext.actorImages.Add(ac);
+            _koreanContext.SaveChanges();
+        }
+
+        public List<actorImage> getAllImage()
+        {
+            return _koreanContext.actorImages.ToList();
+        }
     }
 }

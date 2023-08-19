@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Korean_Api.Models.actorImage>
+
+@{
+    ViewData["Title"] = "ActorWithImage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ActorWithImage</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @{
+                foreach(var i in Model)
+                {
+                    <th>@i.ActorId</th>
+                    <th>
+                    <img src="@i.Image" width="330px" height="330px"/>
+                    </th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

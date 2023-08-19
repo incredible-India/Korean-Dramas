@@ -67,6 +67,11 @@
                     <label asp-for="NoOfAwards" class="control-label"></label>
                     <input asp-for="NoOfAwards" class="form-control" />
                     <span asp-validation-for="NoOfAwards" class="text-danger"></span>
+                </div> 
+                <div class="form-group">
+                    <label asp-for="ImageURL" class="control-label"></label>
+                    <input asp-for="ImageURL" type="file" name="Files" class="form-control" />
+                    <span asp-validation-for="NoOfAwards" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary mt-3" />

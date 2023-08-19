@@ -61,6 +61,7 @@ namespace Korean_Api.Controllers
         public IActionResult ActorList()
         {
             var a = _actor.GetAllActors();
+          
             return View(a);
         }
         public IActionResult DeleteActor(int id) 
@@ -101,8 +102,20 @@ namespace Korean_Api.Controllers
         {
             return View();
         }
+        private string GetImageByActor(string filename,int actorID)
+        {
+            string ImageUrl = string.Empty;
+            string HostUrl = "https://localhost:7197";
+            string Filepath = GetFilepath(filename, actorID);
+            string Imagepath = Filepath + $"\\{filename}";
+
+
+            ImageUrl = HostUrl + $"\\Actor\\{actorID}\\" + filename;
+            _actor.SaveActorImage(ImageUrl,actorID);
+            return ImageUrl;
+        }
         [HttpPost]
-        public IActionResult SavePostImage()
+        public IActionResult SavePostImage(actorImage actorImage)
         {
             try
             {
@@ -111,7 +124,7 @@ namespace Korean_Api.Controllers
                 foreach (IFormFile source in _uploadedFile)
                 {
                     string Filename = source.FileName;
-                    string Filepath = GetFilepath(Filename);
+                    string Filepath = GetFilepath(Filename,actorImage.ActorId);
 
                     //checking whether that folder exists or else creating a new one with same name
                     if (!System.IO.Directory.Exists(Filepath))
@@ -119,7 +132,7 @@ namespace Korean_Api.Controllers
                         System.IO.Directory.CreateDirectory(Filepath);
                     }
 
-                    string imagepath = Filepath + "\\image.png";
+                    string imagepath = Filepath + $"\\{Filename}";
 
                     if (System.IO.File.Exists(imagepath)){
 
@@ -128,10 +141,12 @@ namespace Korean_Api.Controllers
                     using (FileStream stream = System.IO.File.Create(imagepath))
                     {
                         source.CopyTo(stream);
+                        GetImageByActor(Filename, actorImage.ActorId);
                     }
+                  
 
                 }
-
+              
 
             }
             catch (Exception)
@@ -141,10 +156,15 @@ namespace Korean_Api.Controllers
             }
             return RedirectToAction("SaveImage");
         }
-        [NonAction]
-        private string GetFilepath(string filename)
+        public IActionResult ActorWithImage()
         {
-            return this._env.WebRootPath +"\\" +filename;
+           var a = _actor.getAllImage();
+            return View(a);
+        }
+        [NonAction]
+        private string GetFilepath(string filename,int actorID)
+        {
+            return this._env.WebRootPath + $"\\Actor\\{actorID}" ;
         }
         public IActionResult AddDramas()
         {

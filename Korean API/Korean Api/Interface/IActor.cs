@@ -25,5 +25,8 @@ namespace Korean_Api.Interface
         public void DeleteMovieById(int id);
         public void UpdateMovie(int id, Movies movie);
         public Movies GetMovieByID(int id);
+
+        public void SaveActorImage(string image, int aid);
+        public List<actorImage> getAllImage();
     }
 }
