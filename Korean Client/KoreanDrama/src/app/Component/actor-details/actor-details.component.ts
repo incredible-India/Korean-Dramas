@@ -14,7 +14,8 @@ constructor(private route: ActivatedRoute,private com: CommunicationFromServer){
   actorId = this.route.snapshot.paramMap.get('id');
   actordeatils:any
   moviedetails:any[]=[]
-  details:any
+  details:any;
+  TopImages:any;
 
   ngOnInit(): void {
   
@@ -32,9 +33,21 @@ constructor(private route: ActivatedRoute,private com: CommunicationFromServer){
     })
 
     this.com.GetDetails(this.actorId).subscribe(data=>{
+      if(data!=null)
       this.details = data;
+    else
+    this.details = "No Details Added"
+
       console.log(this.details);
     })
+    this.com.GetActorImageById(this.actorId).subscribe(data=>{
+    
+      this.TopImages =data;
+      console.log(this.TopImages,"actor images");
+      
+      
+    })
+  
   }
 
 }

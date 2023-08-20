@@ -16,7 +16,7 @@ namespace Korean_Api.Models
         public string DOB { get; set; }
         public int NoOfAwards { get; set;}
 
-        public string ImageURL { get; set; }
+
 
     }
 }

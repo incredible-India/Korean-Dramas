@@ -19,12 +19,20 @@ export class HomeComponent implements OnInit {
   TopMovies : any[]=[]
   TopDramas : any[]=[]
   TopShows : any[]=[]
-
+  TopImages :any[]=[];
 ngOnInit(): void {
   
   this.com.GetAllActors().subscribe(data=>{
     
     this.ActorsData =data;
+    
+  })
+
+  this.com.GetAllActorImages().subscribe(data=>{
+    
+    this.TopImages =data;
+    console.log(this.TopImages,"actor images");
+    
     
   })
 

@@ -28,5 +28,6 @@ namespace Korean_Api.Interface
 
         public void SaveActorImage(string image, int aid);
         public List<actorImage> getAllImage();
+        public actorImage GetActorImageById (int id);
     }
 }

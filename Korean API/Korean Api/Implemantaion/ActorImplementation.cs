@@ -149,7 +149,7 @@ namespace Korean_Api.Implemantaion
             bool isExist = _koreanContext.ActorsTable.Where(x=>x.Id == Actorid).Any();
             if(isExist)
             {
-                Movies mov = _koreanContext.movies.Where(x => x.Id == Actorid).FirstOrDefault();
+                Movies mov = _koreanContext.movies.Where(x => x.ActorId == Actorid).FirstOrDefault();
                 List<string> m = mov.movies.Split(",").ToList();
                 return m;
             }
@@ -174,7 +174,7 @@ namespace Korean_Api.Implemantaion
 
         public Details GetDetailsById(int Actorid)
         {
-            Details? d = _koreanContext.details.Where(x=> x.Id == Actorid).FirstOrDefault();
+            Details? d = _koreanContext.details.Where(x=> x.ActorId == Actorid).FirstOrDefault();
             return d;
         }
 
@@ -244,6 +244,11 @@ namespace Korean_Api.Implemantaion
         public List<actorImage> getAllImage()
         {
             return _koreanContext.actorImages.ToList();
+        }
+
+        public actorImage GetActorImageById(int id)
+        {
+            return _koreanContext.actorImages.Where(x => x.ActorId == id).FirstOrDefault();
         }
     }
 }

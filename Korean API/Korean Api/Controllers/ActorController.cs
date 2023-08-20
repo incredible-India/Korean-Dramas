@@ -157,9 +157,23 @@ namespace Korean_Api.Controllers
             var det = _actor.GetDetailsById(id);
             return Ok(det);
         }
+        //to get all actor images
+        [HttpGet("GetActorImages")]
+        public IActionResult GetActorImages()
+        {
+            var a = _actor.getAllImage();
+            return Ok(a);
+        }
+
+        //to get image by actor id
+        [HttpGet("GetImageByID/{id:int}")]
+        public IActionResult GetImageByID([FromRoute] int id) {
+            var img = _actor.GetActorImageById(id);
+            return Ok(img);
+        }
         #endregion
 
-     #region Delete
+        #region Delete
         //Delete actor details by id
         [HttpDelete("DeleteActor/{actorId:int}")]
         public IActionResult DeleteActor([FromRoute] int actorId)

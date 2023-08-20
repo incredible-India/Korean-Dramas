@@ -13,17 +13,25 @@
 <table class="table">
     <thead>
         <tr>
-            @{
-                foreach(var i in Model)
-                {
-                    <th>@i.ActorId</th>
-                    <th>
-                    <img src="@i.Image" width="330px" height="330px"/>
-                    </th>
-                }
-            }
+            <th>Actor ID</th>
+            <th>Actor Image</th>
+
         </tr>
     </thead>
+    <tbody>
+        
+        @{
+            foreach (var i in Model)
+            {
+                <tr>
+            <th>@i.ActorId</th>
+            <th>
+                <img src="@i.Image" width="330px" height="330px" />
+            </th>
+                </tr>
+            }
+        }
+    </tbody>
     <tbody>
 @foreach (var item in Model) {
         <tr>

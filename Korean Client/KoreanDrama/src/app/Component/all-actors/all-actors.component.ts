@@ -12,6 +12,7 @@ export class AllActorsComponent {
   }
 
   ActorsData:any;
+  ActorImage :any;
 
   ngOnInit(): void {
   
@@ -20,5 +21,13 @@ export class AllActorsComponent {
       this.ActorsData =data;
       
     })
+    this.com.GetAllActorImages().subscribe(data=>{
+    
+      this.ActorImage =data;
+    
+      
+      
+    })
+  
   }
 }

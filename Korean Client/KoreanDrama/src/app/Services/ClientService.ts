@@ -107,6 +107,32 @@ console.log(res);
         return res;
 
     }
+    GetActorImageById(actorId:any):Observable<any>{
+
+        const url =  this.baseurl + `/api/actor/GetImageById/${actorId}`;
+
+       
+        
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+
+        var res = this.http.get(url,{headers:header})
+
+     
+       
+        return res;
+
+    }
+
+    //to get all images
+    GetAllActorImages ():Observable<any>{
+        const url =  this.baseurl + `/api/actor/GetActorImages`;
+
+        const header = new HttpHeaders().set('x-api-key',"Namya&Himanshu");
+
+        var res = this.http.get(url,{headers:header})
+  
+        return res;
+    }
     //to get all movies of the actor
     GetAllMovies(actorId:any):Observable<any>{
 

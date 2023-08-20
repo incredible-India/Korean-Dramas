@@ -44,7 +44,11 @@
  
   <div class="card" style="width: 18rem;">
     <a routerLink="getActorDetails/{{item.id}}">
-    <img class="card-img-top" src="./../../../assets/Images/image1.jpeg" alt="Card image cap">
+      <div *ngFor="let w of TopImages">
+        <div *ngIf="w.actorId == item.id" >
+    <img class="card-img-top" src="{{w.image}}" alt="Card image cap" height="330px">
+  </div>
+    </div>
   </a>
     <div class="card-body">
       <p class="card-text"><b>{{item.name}}  </b>  
